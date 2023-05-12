@@ -36,6 +36,7 @@ public class PersonService {
 
     public PersonDTO findById(int id) {
         Optional<Person> person = personRepository.findById(id);
+
         return convertToPersonDTO(person.orElseThrow(PersonNotFoundException::new));
     }
 
